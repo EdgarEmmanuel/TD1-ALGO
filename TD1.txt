@@ -1,0 +1,592 @@
+ ----------EXO 3---------
+	VARIABLES
+  R1 EST_DU_TYPE NOMBRE
+  R2 EST_DU_TYPE NOMBRE
+  R3 EST_DU_TYPE NOMBRE
+  Rserie EST_DU_TYPE NOMBRE
+  Rpara EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  R1 PREND_LA_VALEUR 12
+  R2 PREND_LA_VALEUR 14
+  R3 PREND_LA_VALEUR 17
+  AFFICHER* "Resistance en Serie : "
+  Rserie PREND_LA_VALEUR R1+R2+R3
+  AFFICHER* Rserie
+  AFFICHER* "Resistance en parallele"
+  Rpara PREND_LA_VALEUR (R1*R2*R3)/(R1*R2 + R2*R3+R1*R3)
+  AFFICHER* Rpara
+FIN_ALGORITHME
+
+
+ ---------- EXO 4---------------
+	VARIABLES
+  n EST_DU_TYPE NOMBRE
+  ex EST_DU_TYPE NOMBRE
+  result EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "saisir valeur de base "
+  LIRE n
+  AFFICHER "saisir la valeur de l'exposant"
+  LIRE ex
+  result PREND_LA_VALEUR 1
+  i PREND_LA_VALEUR 1
+  // avec la boucle
+  //TANT_QUE (i<=ex) FAIRE
+  // DEBUT_TANT_QUE
+  //result PREND_LA_VALEUR result*n
+  //i PREND_LA_VALEUR i+1
+  //FIN_TANT_QUE
+  // avec la fonction pow
+  result PREND_LA_VALEUR pow(n,ex)
+  AFFICHER* "Le Resultat est : "
+  AFFICHER* result
+FIN_ALGORITHME
+
+
+
+ ---------- EXO 5 -------------
+	VARIABLES
+  x1 EST_DU_TYPE NOMBRE
+  y1 EST_DU_TYPE NOMBRE
+  x2 EST_DU_TYPE NOMBRE
+  y2 EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "saisir la valeur de x1"
+  LIRE x1
+  AFFICHER* "saisir la valeur de x2"
+  LIRE x2
+  AFFICHER* "saisir valeur de y1"
+  LIRE y1
+  AFFICHER* "saisir la valeur de y2"
+  LIRE y2
+  AFFICHER* "Resultat de la distance entre ces deux points : "
+  AFFICHERCALCUL* sqrt( pow((x2-x1),2) + pow((y2-y1),2)  )
+FIN_ALGORITHME
+
+
+
+
+
+
+ -------------EXO 6--------------
+ VARIABLES
+  x1 EST_DU_TYPE NOMBRE
+  y1 EST_DU_TYPE NOMBRE
+  x2 EST_DU_TYPE NOMBRE
+  y2 EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "saisir la valeur de x1"
+  LIRE x1
+  AFFICHER* "saisir la valeur de x2"
+  LIRE x2
+  AFFICHER* "saisir valeur de y1"
+  LIRE y1
+  AFFICHER* "saisir la valeur de y2"
+  LIRE y2
+  AFFICHER* "Resultat de la distance entre ces deux points : "
+  AFFICHERCALCUL* sqrt( pow((x2-x1),2) + pow((y2-y1),2)  )
+FIN_ALGORITHME
+
+
+
+ -----------EXO8-----------
+ VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  c EST_DU_TYPE NOMBRE
+  discri EST_DU_TYPE NOMBRE
+  x1 EST_DU_TYPE NOMBRE
+  x2 EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "saisir la valeur de a"
+  LIRE a
+  AFFICHER* "saisir la valeur de B"
+  LIRE b
+  AFFICHER* "saisir la valeur de c"
+  LIRE c
+  AFFICHER a
+  AFFICHER "x^2 + "
+  AFFICHER b
+  AFFICHER "x + "
+  AFFICHER* c
+  discri PREND_LA_VALEUR pow(b,2) - 4*(a*c)
+  
+  SI (discri>0) ALORS
+    DEBUT_SI
+    AFFICHER "Resultat Discriminant : "
+    AFFICHER* discri
+    x1 PREND_LA_VALEUR (-b+sqrt(discri)) / (2*a)
+    x2 PREND_LA_VALEUR ( -b - sqrt(discri) )/(2*a)
+    AFFICHER* "Resultat Equation : "
+    AFFICHER "X1 = "
+    AFFICHER* x1
+    AFFICHER "X2 = "
+    AFFICHER* x2
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (discri=0) ALORS
+        DEBUT_SI
+        AFFICHER "Discriminant est egal a = "
+        AFFICHER* discri
+        x1 PREND_LA_VALEUR -b / (2*a)
+        AFFICHER* "Resultat Equation : "
+        AFFICHER* x1
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          AFFICHER* "Discriminant INferieur a Zero : Donc Pas de Solution"
+          FIN_SINON
+      FIN_SINON
+FIN_ALGORITHME
+
+
+
+
+ --------- EXO 10-----------
+ VARIABLES
+  numbers EST_DU_TYPE LISTE
+  i EST_DU_TYPE NOMBRE
+  j EST_DU_TYPE NOMBRE
+  svg EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  POUR i ALLANT_DE 1 A 3
+    DEBUT_POUR
+    AFFICHER* "saisir la valeur "
+    LIRE numbers[i]
+    FIN_POUR
+  AFFICHER* "Avant Tri"
+  POUR i ALLANT_DE 1 A 3
+    DEBUT_POUR
+    AFFICHER numbers[i]
+    AFFICHER " | "
+    FIN_POUR
+  AFFICHER* "  "
+  AFFICHER* "Apres le tri Croissant"
+  POUR i ALLANT_DE 1 A 3
+    DEBUT_POUR
+    POUR j ALLANT_DE i+1 A 3
+      DEBUT_POUR
+      SI (numbers[i]>numbers[j]) ALORS
+        DEBUT_SI
+        svg PREND_LA_VALEUR numbers[i]
+        numbers[i] PREND_LA_VALEUR numbers[j]
+        numbers[j] PREND_LA_VALEUR svg
+        FIN_SI
+      FIN_POUR
+    FIN_POUR
+  POUR i ALLANT_DE 1 A 3
+    DEBUT_POUR
+    AFFICHER numbers[i]
+    AFFICHER " | "
+    FIN_POUR
+FIN_ALGORITHME
+
+
+
+
+ ---------- EXO 11---------
+
+ VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  signe EST_DU_TYPE CHAINE
+  total EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "Saisir la valeur de a"
+  LIRE a
+  AFFICHER* "saisir la avaleur de b"
+  LIRE b
+  AFFICHER* "saisir le signe de l'operation"
+  LIRE signe
+  SI (signe=="+") ALORS
+    DEBUT_SI
+    total PREND_LA_VALEUR a+b
+    AFFICHER a
+    AFFICHER " + "
+    AFFICHER b
+    AFFICHER " = "
+    AFFICHER* total
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (signe=="*") ALORS
+        DEBUT_SI
+        total PREND_LA_VALEUR a*b
+        AFFICHER* "Resultat"
+        AFFICHER a
+        AFFICHER " * "
+        AFFICHER b
+        AFFICHER " = "
+        AFFICHER* total
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          SI (signe=="-") ALORS
+            DEBUT_SI
+            total PREND_LA_VALEUR a-b
+            AFFICHER "Resultat de la Soustraction : "
+            AFFICHER* total
+            FIN_SI
+            SINON
+              DEBUT_SINON
+              SI (signe=="/" ET b!=0) ALORS
+                DEBUT_SI
+                total PREND_LA_VALEUR a/b
+                AFFICHER "Resultat de la Division : "
+                AFFICHER* total
+                FIN_SI
+              FIN_SINON
+          FIN_SINON
+      FIN_SINON
+FIN_ALGORITHME
+
+
+
+ ----------- EXO 11--------
+ VARIABLES
+  i EST_DU_TYPE NOMBRE
+  nbre EST_DU_TYPE NOMBRE
+  tot EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  tot PREND_LA_VALEUR 0
+  AFFICHER* "Saisir la valeur du nombre "
+  LIRE nbre
+  POUR i ALLANT_DE 1 A nbre-1
+    DEBUT_POUR
+    SI (nbre%i==0) ALORS
+      DEBUT_SI
+      tot PREND_LA_VALEUR tot+i
+      FIN_SI
+    FIN_POUR
+  SI (tot==nbre) ALORS
+    DEBUT_SI
+    AFFICHER "le nombre "
+    AFFICHER nbre
+    AFFICHER* " est un nombre parfait"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER* "Le nombre choisi n'est pas parfait"
+      FIN_SINON
+FIN_ALGORITHME
+
+
+
+
+
+ -------EXO13---------
+
+ VARIABLES
+  jour EST_DU_TYPE NOMBRE
+  mois EST_DU_TYPE NOMBRE
+  annee EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "saisir le jour du mois "
+  LIRE jour
+  AFFICHER* "saisir le mois "
+  LIRE mois
+  AFFICHER* "Saisir l'annee"
+  LIRE annee
+  SI (jour>=1 ET jour<=31 ET mois>=1 ET mois<=12 ) ALORS
+    DEBUT_SI
+    AFFICHER jour
+    AFFICHER " / "
+    AFFICHER mois
+    AFFICHER " / "
+    AFFICHER* annee
+    AFFICHER* "La date est valide "
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER* "Date Invalide "
+      FIN_SINON
+FIN_ALGORITHME
+
+
+
+ --------- EXO 14 ----------
+ VARIABLES
+  jour EST_DU_TYPE NOMBRE
+  mois EST_DU_TYPE NOMBRE
+  an EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "saisir le jour "
+  LIRE jour
+  AFFICHER* "saisir le mois "
+  LIRE mois
+  AFFICHER* "saisir annee"
+  LIRE an
+  SI (jour>=1 ET jour<=31 ET mois>=1 ET mois<=12) ALORS
+    DEBUT_SI
+    AFFICHER "la Date "
+    AFFICHER jour
+    AFFICHER " / "
+    AFFICHER mois
+    AFFICHER " / "
+    AFFICHER an
+    AFFICHER* " est valide "
+    SI ((an%366) == 5) ALORS
+      DEBUT_SI
+      AFFICHER* " Et elle est Bissextile "
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        AFFICHER* " Mais elle n'est Pas Bissextile "
+        FIN_SINON
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER* "La Date est Invalide"
+      FIN_SINON
+FIN_ALGORITHME
+
+
+
+ --------- EXO 15 ----------
+ 
+ VARIABLES
+  i EST_DU_TYPE NOMBRE
+  num EST_DU_TYPE NOMBRE
+  total EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  total PREND_LA_VALEUR 0
+  AFFICHER* "saisir le nombre : "
+  LIRE num
+  POUR i ALLANT_DE 1 A num
+    DEBUT_POUR
+    total PREND_LA_VALEUR total+i
+    FIN_POUR
+  AFFICHER "Total de la Somme : "
+  AFFICHER* total
+FIN_ALGORITHME
+
+
+ --------- EXO 16 ------------
+
+
+ VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  reste EST_DU_TYPE NOMBRE
+  svg EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "saisir le nombre a"
+  LIRE a
+  AFFICHER* "saisir le nombre b"
+  LIRE b
+  AFFICHER " ( "
+  AFFICHER a
+  AFFICHER " , "
+  AFFICHER b
+  AFFICHER* " ) "
+  SI (a>b) ALORS
+    DEBUT_SI
+    reste PREND_LA_VALEUR a-b
+    TANT_QUE (reste!=0) FAIRE
+      DEBUT_TANT_QUE
+      reste PREND_LA_VALEUR a-b
+      AFFICHER* reste
+      svg PREND_LA_VALEUR reste
+      a PREND_LA_VALEUR b
+      b PREND_LA_VALEUR svg
+      FIN_TANT_QUE
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      reste PREND_LA_VALEUR b-a
+      TANT_QUE (reste!=0) FAIRE
+        DEBUT_TANT_QUE
+        reste PREND_LA_VALEUR b-a
+        AFFICHER* reste
+        SI (reste==0) ALORS
+          DEBUT_SI
+          AFFICHER "PGCD : "
+          AFFICHER* b
+          FIN_SI
+        svg PREND_LA_VALEUR reste
+        b PREND_LA_VALEUR a
+        a PREND_LA_VALEUR svg
+        FIN_TANT_QUE
+      FIN_SINON
+FIN_ALGORITHME
+
+
+
+
+
+
+
+
+ ----------- EXO 18----------
+ VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  svg EST_DU_TYPE NOMBRE
+  reste EST_DU_TYPE NOMBRE
+  pgcd EST_DU_TYPE NOMBRE
+  p1 EST_DU_TYPE NOMBRE
+  ppcm EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "Saisir la  valeur de a "
+  LIRE a
+  AFFICHER* "saisir la valeur de b"
+  LIRE b
+  p1 PREND_LA_VALEUR a*b
+  AFFICHER "PPCM ( "
+  AFFICHER a
+  AFFICHER " , "
+  AFFICHER b
+  AFFICHER* " )"
+  SI (a>b) ALORS
+    DEBUT_SI
+    reste PREND_LA_VALEUR a-b
+    TANT_QUE (reste!=0) FAIRE
+      DEBUT_TANT_QUE
+      reste PREND_LA_VALEUR a-b
+      SI (reste==0) ALORS
+        DEBUT_SI
+        pgcd PREND_LA_VALEUR a
+        ppcm PREND_LA_VALEUR p1/pgcd
+        AFFICHER "PPCM : "
+        AFFICHER* ppcm
+        FIN_SI
+      svg PREND_LA_VALEUR reste
+      a PREND_LA_VALEUR b
+      b PREND_LA_VALEUR svg
+      FIN_TANT_QUE
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      reste PREND_LA_VALEUR b-a
+      TANT_QUE (reste!=0) FAIRE
+        DEBUT_TANT_QUE
+        reste PREND_LA_VALEUR b-a
+        SI (reste==0) ALORS
+          DEBUT_SI
+          pgcd PREND_LA_VALEUR b
+          ppcm PREND_LA_VALEUR p1/pgcd
+          AFFICHER "PPCM : "
+          AFFICHER* ppcm
+          FIN_SI
+        svg PREND_LA_VALEUR reste
+        b PREND_LA_VALEUR a
+        a PREND_LA_VALEUR svg
+        FIN_TANT_QUE
+      FIN_SINON
+FIN_ALGORITHME
+
+
+ ---------- EXO 19 ------------
+ VARIABLES
+  n EST_DU_TYPE NOMBRE
+  tab EST_DU_TYPE LISTE
+  i EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "Combien de Nombres voulez vous saisir "
+  LIRE n
+  AFFICHER* "---------SAISIE DES PRIX-----"
+  POUR i ALLANT_DE 1 A n
+    DEBUT_POUR
+    AFFICHER* "saisir le prix "
+    LIRE tab[i]
+    FIN_POUR
+  AFFICHER* "--------AFFICHAGE------- "
+  POUR i ALLANT_DE 1 A n
+    DEBUT_POUR
+    AFFICHER tab[i]
+    AFFICHER* " FCFA "
+    FIN_POUR
+FIN_ALGORITHME
+
+
+
+ ----------- EXO 20 -------------
+ VARIABLES
+  i EST_DU_TYPE NOMBRE
+  svg EST_DU_TYPE NOMBRE
+  val EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  svg PREND_LA_VALEUR 0
+  POUR i ALLANT_DE 1 A 10
+    DEBUT_POUR
+    AFFICHER* "saisir valeur "
+    LIRE val
+    SI (val>svg) ALORS
+      DEBUT_SI
+      svg PREND_LA_VALEUR val
+      FIN_SI
+    FIN_POUR
+  AFFICHER "PLUS GRAND : "
+  AFFICHER* svg
+FIN_ALGORITHME
+
+
+ ----------- EXO 21 -----------
+ VARIABLES
+  secret EST_DU_TYPE NOMBRE
+  val EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "User 1 : Saisir Secret Number "
+  LIRE secret
+  val PREND_LA_VALEUR 0
+  TANT_QUE (val!=secret) FAIRE
+    DEBUT_TANT_QUE
+    SI (val<secret) ALORS
+      DEBUT_SI
+      AFFICHER* "Trop Petit , Try Again"
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        AFFICHER* "Trop Grand , keep Trying"
+        FIN_SINON
+    LIRE val
+    FIN_TANT_QUE
+FIN_ALGORITHME
+
+
+
+
+
+
+
+
+
+
+  
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
