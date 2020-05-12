@@ -142,6 +142,41 @@ DEBUT_ALGORITHME
 FIN_ALGORITHME
 
 
+ ---------------  exo 9 ------------------
+ VARIABLES
+  hd EST_DU_TYPE NOMBRE
+  hr EST_DU_TYPE NOMBRE
+  md EST_DU_TYPE NOMBRE
+  mr EST_DU_TYPE NOMBRE
+  minus EST_DU_TYPE NOMBRE
+  Hours EST_DU_TYPE NOMBRE
+  minutes EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "Saisie heure Depart"
+  LIRE hd
+  AFFICHER* "saisie minutes depart"
+  LIRE md
+  AFFICHER* "saisie Heure Arrivee"
+  LIRE hr
+  AFFICHER* "Saisie Minutes Arrivee"
+  LIRE mr
+  md PREND_LA_VALEUR md+(hd*60)
+  mr PREND_LA_VALEUR mr+(hr*60)
+  AFFICHER "Total en Minutes Depart : "
+  AFFICHER* md
+  AFFICHER "Total Minutes Arrivee : "
+  AFFICHER* mr
+  minus PREND_LA_VALEUR mr-md
+  Hours PREND_LA_VALEUR floor(minus/60)
+  minutes PREND_LA_VALEUR minus%60
+  AFFICHER "Duree du Trajet :  "
+  AFFICHER Hours
+  AFFICHER " h "
+  AFFICHER minutes
+  AFFICHER* " mn "
+FIN_ALGORITHME
+
+
 
 
  --------- EXO 10-----------
