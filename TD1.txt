@@ -695,6 +695,29 @@ end
 puts ""
 
 
+------------------- EXO 23 (Ruby) -------------------
+########### EXO SUR LE NOMBRE DE LAPIN #################
+
+# mois precedent 
+mois_precedent=2
+# mois avant le mois Precedent 
+mois_precedent__le_precedent=0
+# variable poyr le nombre de lapin 
+nombre_Lapin=0
+# un compteur 
+i=1
+while nombre_Lapin<=1000000000
+    nombre_Lapin = mois_precedent + mois_precedent__le_precedent
+    mois_precedent__le_precedent = mois_precedent
+    mois_precedent = nombre_Lapin
+    # puts " Mois #{i} now MP = #{mp} et MPP = #{mpp}"
+    # puts " Mois #{i} | Total Lapin : #{nb}"
+    i+=1
+end
+
+puts "Le nombre de Lapins depassera le milliard au mois : #{i}"
+
+
 
 --------------- EXO 25 (Ruby) --------------
 puts " saisir la valeur du nombre "
