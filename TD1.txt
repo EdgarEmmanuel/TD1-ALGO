@@ -767,6 +767,58 @@ end
 
 
 
+------------- exo 26 (Ruby) -------------------
+ar= [1,2,3,4,55,6,7,8]
+
+
+long = ar.length
+
+puts " ---------- AFFICHAGE DU TABLEAU ------------- "
+
+for i in 0..long-1
+    print ar[i].to_s+" | "
+end 
+puts " "
+
+
+#verification si le tableau est dans l'ordre croissant 
+puts "Long = "+long.to_s
+cptCRoissant=1
+for i in 0..long 
+    if(ar[i+1]!=nil)
+        if(ar[i] < ar[i+1])
+            cptCRoissant+=1
+        end
+    end
+end
+
+
+#verification si le tableau est dans l'ordre decroissant 
+cptDECROISSANT=1
+
+#on renverse d'abord le tableau 
+k = ar.reverse()
+
+for j in 0..long
+    #on verifie bien que le nombre n+1 est different de  nil
+    if(k[j+1]!=nil)
+        #on verifie que i>i+1
+        if(k[j] > k[j+1])
+            #on incremente alors 
+            cptDECROISSANT+=1 
+        end
+    end
+end
+
+
+#si le compteur dans la boucle des nombres croissants  est egal a la longeur du tableau alors Ordre Croissant
+if(cptCRoissant==long)
+    puts "Les chiffres sont dans l'ordre croissant"
+elsif(cptDECROISSANT==long)
+    puts "Les chiffres sont dans l'ordre decroissant"
+else
+    puts "Les chiffres sont dans l'ordre quelconque"
+end
 
 
 
