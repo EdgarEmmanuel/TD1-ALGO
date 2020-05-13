@@ -719,6 +719,38 @@ puts "Le nombre de Lapins depassera le milliard au mois : #{i}"
 
 
 
+--------------- EXO 24 (Ruby) -----------------
+
+# l'utilisateur doit deviner un nombre et l'algorithme doit verifier si il est exact
+#lui dire trop grand si son choix est superieur au nombre secret 
+#lui dire trop petit si le nombre est inferieur au nombre secret 
+
+puts "DETERMINE THE SECRET NUMBER : "
+GoodNum=gets.chomp().to_i
+
+puts "GUESS THE NUMBER I THINK : "
+numb = gets.chomp.to_i
+cpr=1
+
+while (numb !=GoodNum and cpr<=10)
+    if(numb<GoodNum)
+        puts "GUESS THE NUMBER , NUMBER TOO TALL"
+        numb =  gets.chomp.to_i
+    elsif(numb > GoodNum)
+        puts "GUESS AGAIN THE NUMBER , NUMBER TOO SUPERIOR"
+        numb = gets.chomp.to_i
+    end
+    cpr+=1
+end
+
+if(cpr>10)
+    puts "You Have LOst , you HAD ONLY 10 TEMPTATIVES"
+else
+    puts "RIGHT NUMBER , AWESOME IN JUST #{cpr} TEMPTATIVES "
+end
+
+
+
 --------------- EXO 25 (Ruby) --------------
 puts " saisir la valeur du nombre "
 a = gets.chomp().to_i
