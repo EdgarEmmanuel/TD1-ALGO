@@ -313,7 +313,7 @@ FIN_ALGORITHME
 
 
 
- ----------- EXO 11--------
+ ----------- EXO 12--------
  VARIABLES
   i EST_DU_TYPE NOMBRE
   nbre EST_DU_TYPE NOMBRE
@@ -377,6 +377,42 @@ FIN_ALGORITHME
 
  --------- EXO 14 ----------
  VARIABLES
+  jour EST_DU_TYPE NOMBRE
+  mois EST_DU_TYPE NOMBRE
+  an EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "saisir le jour "
+  LIRE jour
+  AFFICHER* "saisir le mois "
+  LIRE mois
+  AFFICHER* "saisir annee"
+  LIRE an
+  SI (jour>=1 ET jour<=31 ET mois>=1 ET mois<=12) ALORS
+    DEBUT_SI
+    AFFICHER "la Date "
+    AFFICHER jour
+    AFFICHER " / "
+    AFFICHER mois
+    AFFICHER " / "
+    AFFICHER an
+    AFFICHER* " est valide "
+    SI ((an%366) == 5) ALORS
+      DEBUT_SI
+      AFFICHER* " Et elle est Bissextile "
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        AFFICHER* " Mais elle n'est Pas Bissextile "
+        FIN_SINON
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER* "La Date est Invalide"
+      FIN_SINON
+FIN_ALGORITHME
+
+-------------- EXO 14 --------------------
+VARIABLES
   jour EST_DU_TYPE NOMBRE
   mois EST_DU_TYPE NOMBRE
   an EST_DU_TYPE NOMBRE
@@ -488,7 +524,7 @@ FIN_ALGORITHME
 
 
 
- ----------- EXO 18----------
+ ----------- EXO 17 et 18----------
  VARIABLES
   a EST_DU_TYPE NOMBRE
   b EST_DU_TYPE NOMBRE
@@ -614,6 +650,23 @@ DEBUT_ALGORITHME
     FIN_TANT_QUE
 FIN_ALGORITHME
 
+
+
+
+
+--------------- EXO 25 --------------
+puts " saisir la valeur du nombre "
+a = gets.chomp().to_i
+
+
+for i in 1..a
+    j=0
+    while j<i 
+        print i
+        j+=1
+    end
+    puts " "
+end
 
 
 
