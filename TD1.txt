@@ -142,7 +142,7 @@ DEBUT_ALGORITHME
 FIN_ALGORITHME
 
 
- ---------------  exo 9 ------------------
+ ---------------  exo 9 VERSION 1 ------------------
  VARIABLES
   hd EST_DU_TYPE NOMBRE
   hr EST_DU_TYPE NOMBRE
@@ -176,6 +176,40 @@ DEBUT_ALGORITHME
   AFFICHER* " mn "
 FIN_ALGORITHME
 
+---------------- EXO 9 VERSION 2 -----------------
+
+VARIABLES
+  Temps_Heure_Depart EST_DU_TYPE NOMBRE
+  Temps_minutes_Depart EST_DU_TYPE NOMBRE
+  Temps_minutes_Arrivee EST_DU_TYPE NOMBRE
+  Temps_Heure_Arrivee EST_DU_TYPE NOMBRE
+  TotTempsDep EST_DU_TYPE NOMBRE
+  TotTempsArr EST_DU_TYPE NOMBRE
+  TempsJourney EST_DU_TYPE NOMBRE
+  DureH EST_DU_TYPE NOMBRE
+  DureeTotalMinutes EST_DU_TYPE NOMBRE
+  DureeMinutes EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  TempsJourney PREND_LA_VALEUR 24*60
+  AFFICHER* "Saisir Heur Depart"
+  LIRE Temps_Heure_Depart
+  AFFICHER "Saisir Minutes Depart"
+  LIRE Temps_minutes_Depart
+  AFFICHER* "saisir Heure Arrivee"
+  LIRE Temps_Heure_Arrivee
+  AFFICHER* "saisir Minutes arrivee"
+  LIRE Temps_minutes_Arrivee
+  TotTempsDep PREND_LA_VALEUR (Temps_Heure_Depart*60)+Temps_minutes_Depart
+  TotTempsArr PREND_LA_VALEUR (Temps_Heure_Arrivee*60)+Temps_minutes_Arrivee
+  DureeTotalMinutes PREND_LA_VALEUR (TempsJourney-TotTempsDep)+TotTempsArr
+  DureH PREND_LA_VALEUR floor(DureeTotalMinutes/60)
+  DureeMinutes PREND_LA_VALEUR DureeTotalMinutes%60
+  AFFICHER "Duree du Vol : "
+  AFFICHER DureH
+  AFFICHER " h "
+  AFFICHER DureeMinutes
+  AFFICHER " mn "
+FIN_ALGORITHME
 
 
 
