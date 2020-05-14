@@ -685,11 +685,10 @@ for i in 0..15
     end
 end
 
-puts "Longeur est : "+svg.to_s
-puts "Last : "+svg2.to_s
-puts "Position : "+posi.to_s
-
-for j in 3..11
+puts "Longeur est de la suite successive : "+svg.to_s
+puts "Le dernier nombre est : "+svg2.to_s+" , Il est a la position : "+posi.to_s
+puts "Tableau de la suite Successive "
+for j in (posi-svg)..posi
     print "#{array[j]} | "
 end
 puts ""
