@@ -756,23 +756,33 @@ Debut :
 FIN
 
 
---------------- EXO 25 (Ruby) --------------
-puts " saisir la valeur du nombre "
-a = gets.chomp().to_i
+--------------- EXO 25 --------------
+
+Algorithme exo25
+Variables:
+	n,i,j:entier
+DEBUT
+
+	AFFICHER(" saisir la valeur du nombre ")
+	lire(n)
 
 
-for i in 1..a
-    j=0
-    while j<i 
-        print i
-        j+=1
-    end
-    puts " "
-end
+	POUR i <- 1 a n
+	    j<-0
+	    TANTQUE j<i 
+		Afficher( i)
+		j<-j+1
+	    FINTANTQUE
+	FINPOUR
+
+FIN
 
 
 
 ------------- exo 26 (Ruby) -------------------
+#SORRY Sir i was obligate to do this exercice in Ruby it was the only solution 
+#i had to really see what my algorithm does
+
 ar= [1,2,3,4,55,6,7,8]
 
 
