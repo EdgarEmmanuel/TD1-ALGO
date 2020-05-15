@@ -1,4 +1,41 @@
- ----------EXO 3---------
+ 
+--------- EXO 1 ----------
+Algorithme 1 
+Variables : 
+ a , b : entier 
+
+DEBUT 
+	Afficher "saisir la valeur de a "
+	lire a 
+	Afficher "saisir la valeur de b "
+	lire b
+
+	Afficher " a + b = ",a+b
+	Afficher " a - b = ",a-b
+	Afficher " a * b = ",a-b
+	Afficher " a / b = ",Floor(a/b)
+	Afficher " le reste de a / b = ",a%b
+FIN
+
+
+------------ EXO 2-------------
+
+Algorithme exo 2
+Variables:
+ rayon,PI:reel 
+
+Debut 
+PI <- 4*atan(1)
+Afficher ("saisir la valeur du Rayon")
+lire rayon 
+
+Afficher ("Le Perimetre de ce cercle : ",2*PI*rayon)
+Afficher ('La surface de ce cercle : ",pow(rayon,2)*PI)
+
+
+
+
+----------EXO 3---------
 	VARIABLES
   R1 EST_DU_TYPE NOMBRE
   R2 EST_DU_TYPE NOMBRE
